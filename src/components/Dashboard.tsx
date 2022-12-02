@@ -26,28 +26,35 @@ type DashboardProps = {
 
 export default function Dashboard({ columns, data }: DashboardProps) {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="dashboard table">
-        <TableHead>
-          <TableRow>
-            {columns.map((column) => (
-              <TableCell key={column.title}>{column.title}</TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((row, idx) => (
-            <TableRow
-              key={idx}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              {row.values.map((value, idx) => (
-                <TableCell key={idx}>{value.value}</TableCell>
+    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+      <TableContainer sx={{ maxHeight: 480 }}>
+        <Table
+          stickyHeader
+          sx={{ minWidth: 650 }}
+          size="small"
+          aria-label="dashboard table"
+        >
+          <TableHead>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell key={column.title}>{column.title}</TableCell>
               ))}
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {data.map((row, idx) => (
+              <TableRow
+                key={idx}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                {row.values.map((value, idx) => (
+                  <TableCell key={idx}>{value.value}</TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
   );
 }

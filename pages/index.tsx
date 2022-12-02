@@ -36,7 +36,9 @@ const Home: NextPage<{
           Boilerplate for building faster.
         </Typography>
         {data && data.results.length > 0 ? (
-          <Dashboard columns={filters[0].columns} data={data.results} />
+          <Box sx={{ my: 5 }}>
+            <Dashboard columns={filters[0].columns} data={data.results} />
+          </Box>
         ) : null}
       </Box>
     </Container>
