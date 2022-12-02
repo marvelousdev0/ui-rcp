@@ -37,7 +37,16 @@ const Home: NextPage<{
         <Typography variant="question" color="secondary">
           Boilerplate for building faster.
         </Typography>
-        <Box sx={{ my: 5 }}>
+        <Box
+          sx={{
+            width: "100%",
+            my: 5,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+          }}
+        >
           <DashboardViewFilter filters={filters} />
           {data && data.results.length > 0 ? (
             <Box sx={{ my: 1 }}>
