@@ -4,6 +4,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
 } from "@mui/material";
 import * as React from "react";
 
@@ -18,6 +19,11 @@ type DashboardViewFilterProps = {
 export default function DashboardViewFilter({
   filters,
 }: DashboardViewFilterProps) {
+  const [view, setView] = React.useState(filters[0].id);
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setView(event.target.value);
+  };
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
       <InputLabel id="demo-simple-select-helper-label">View</InputLabel>
@@ -25,7 +31,8 @@ export default function DashboardViewFilter({
         labelId="demo-simple-select-helper-label"
         id="demo-simple-select-helper"
         label="View"
-        value={filters[0].id}
+        value={view}
+        onChange={handleChange}
       >
         {filters.map((filter) => (
           <MenuItem key={filter.id} value={filter.id}>
