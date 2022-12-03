@@ -10,7 +10,7 @@ export const inter = Inter({
 });
 
 const colors = {
-  primary: blue[700],
+  primary: blue[900],
   neutral: purple.A200,
   secondary: lightGreen[500],
 };
@@ -38,7 +38,7 @@ declare module "@mui/material/Typography" {
 const theme = responsiveFontSizes(
   createTheme({
     palette: {
-      mode: "dark",
+      mode: "light",
       primary: {
         main: colors.primary,
         light: blue[900],

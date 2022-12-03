@@ -25,7 +25,7 @@ export default function DashboardViewFilter({
     setView(event.target.value);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl sx={{ my: 1, minWidth: 120 }} size="small">
       <InputLabel id="demo-simple-select-helper-label">View</InputLabel>
       <Select
         labelId="demo-simple-select-helper-label"
