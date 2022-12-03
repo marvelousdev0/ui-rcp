@@ -1,10 +1,16 @@
 import { blue, lightGreen, purple } from "@mui/material/colors";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
-import { Inter } from "@next/font/google";
+import { Inter, IBM_Plex_Sans } from "@next/font/google";
 
 export const inter = Inter({
   variable: "--inter-font",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
+export const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--ibm-plex-sans-font",
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -54,13 +60,15 @@ const theme = responsiveFontSizes(
       },
     },
     typography: {
-      fontFamily: inter.style.fontFamily,
+      fontFamily: ibmPlexSans.style.fontFamily,
       h1: {
+        fontFamily: inter.style.fontFamily,
         fontSize: "2.5rem",
         fontWeight: 900,
         color: colors.primary,
       },
       question: {
+        fontFamily: inter.style.fontFamily,
         fontSize: "1.1rem",
         fontWeight: "bold",
       },

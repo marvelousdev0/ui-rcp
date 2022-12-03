@@ -6,6 +6,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  useTheme,
 } from "@mui/material";
 import * as React from "react";
 
@@ -25,8 +26,16 @@ type DashboardProps = {
 };
 
 export default function Dashboard({ columns, data }: DashboardProps) {
+  const theme = useTheme();
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+    <Paper
+      sx={{
+        width: "100%",
+        overflow: "hidden",
+        boxShadow: "none",
+        border: `1px solid ${theme.palette.divider}`,
+      }}
+    >
       <TableContainer sx={{ maxHeight: 480 }}>
         <Table
           stickyHeader
