@@ -1,4 +1,4 @@
-export const strings: Record<string, string> = {
+const strings: Record<string, string> = {
   "mtm.rcp.home.title": "Home",
 };
 
